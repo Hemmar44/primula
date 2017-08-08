@@ -1,3 +1,17 @@
+<?php
+
+include('Modules/Products.php');
+
+$products = new Products;
+
+$list = $products->products_set;
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -138,12 +152,13 @@
         <div class="row gallery-row">
           
           <div class="col-md-6 col-sm-6">
-            <a href="images/img_1.jpg" class="img image-popup">
+            <a href="<?= $list[0]['path']; ?>" class="img image-popup">
               <div class="overlay"></div>
               <div class="text">
                 <h2>Project 1</h2>
+                <p>Jakiś dodatkowy opis</p>
               </div>
-              <img src="images/img_1.jpg" alt="Image" class="img-responsive">
+              <img src="<?= $list[0]['path']; ?>" alt="Image" class="img-responsive">
             </a>
           </div>
 
